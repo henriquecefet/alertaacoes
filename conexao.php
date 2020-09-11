@@ -8,6 +8,6 @@ $credentials = "user = hmqbzhhxovmzwl password=ffa8e598fe771f7b2350a22358d122abf
    if(!$db) {
       echo "Error : Unable to open database\n";
    } else {
-      echo "Opened database successfully\n";
+      //echo "Opened database successfully\n";
    }
   ?>
