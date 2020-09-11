@@ -1,3 +1,6 @@
+<?php
+include("conexao.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +19,39 @@
         <div class="container">
 
         <?php
-        echo("olá");
-        echo("<br>");
-        $url  = "http://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_URL,$url);
-        $result=curl_exec($ch);
-        curl_close($ch);      
-        var_dump(json_decode($result, true));
+        $sql =<<<EOF
+           SELECT * from acoes.acoes;
+EOF;
+        $ret = pg_query($db, $sql);
+        if(!$ret) {
+             echo pg_last_error($db);
+         exit;
+        }
+        while($row = pg_fetch_row($ret)) {
+          echo("olá");
+          echo("<br>");
+          $url  = "http://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol="+row[0];
+          $ch = curl_init();
+          curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+          curl_setopt($ch, CURLOPT_URL,$url);
+          $result=curl_exec($ch);
+          curl_close($ch);
+          var_dump(json_decode($result, true));
+          echo("<br>");
+        }
+        echo "Operation done successfully\n". "<br>";
+        pg_close($db);
+
+
+
+
+
+
+
+
+
+
         ?>
         </div>
   </body>
