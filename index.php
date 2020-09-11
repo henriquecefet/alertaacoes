@@ -17,6 +17,7 @@
         <div class="container">
 
 <?php
+echo("olá");
 function CallAPI($url){
   ini_set("allow_url_fopen", 1);
   $json = file_get_contents($url);
