@@ -37,7 +37,7 @@ EOF;
           $result=curl_exec($ch);
           curl_close($ch);
           //var_dump(json_decode($result, true));
-          $dados = json_decode($result, true)
+          $dados = json_decode($result, true);
           echo "Ação: "$dados['results']['name'];
           echo("<br>");
           echo "Preço: R$"$dados['results']['price'];
