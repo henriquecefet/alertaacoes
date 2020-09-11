@@ -17,7 +17,7 @@ include("conexao.php");
        <p>Lista de Ações da B3</p>
      </div>
         <div class="container">
-
+          <h2>Vender:</h2>
         <?php
         $sql =<<<EOF
            SELECT * from acoes.acoes;
@@ -50,5 +50,9 @@ EOF;
         pg_close($db);
         ?>
         </div>
+            <div class="container">
+                  <h2>Comprar:</h2>
+            </div>
+
   </body>
 </html>
