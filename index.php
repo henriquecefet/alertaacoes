@@ -1,5 +1,8 @@
 <?php
 include("conexao.php");
+$vender = array();
+$comprar = array();
+$estavel = array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,11 +38,7 @@ EOF;
           //var_dump(json_decode($result, true));
           //echo("<br>");
           $dados = json_decode($result, true);
-          $vender = array();
-          $comprar = array();
-          $estavel = array();
           $acao =  array($dados['results'][$row[0]]['symbol'], $dados['results'][$row[0]]['price'], $dados['results'][$row[0]]['change_percent']);
-          echo $dados['results'][$row[0]]['symbol'];
           if($dados['results'][$row[0]]['change_percent']>1){
             array_push($vender, $acao);
           }
