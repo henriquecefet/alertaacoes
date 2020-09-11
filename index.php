@@ -19,36 +19,13 @@
         echo("olá");
         echo("<br>");
         $url  = "http://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3";
-
-
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, true);
-
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0');
-
-        $exe  = curl_exec($ch);
-        $getInfo = curl_getinfo($ch);
-
-        if ($exe === false) {
-            $output = "Error in sending";
-            if (curl_error($ch)){
-                $output .= "\n". curl_error($ch);
-            }
-        } else if($getInfo['http_code'] != 777){
-            $output = "No data returned. Error: " . $getInfo['http_code'];
-            if (curl_error($ch)){
-                $output .= "\n". curl_error($ch);
-            }
-        }
-
-        curl_close($ch);
-
-        echo $output;
+        curl_setopt($ch, CURLOPT_URL,$url);
+        $result=curl_exec($ch);
+        curl_close($ch);      
+        var_dump(json_decode($result, true));
         ?>
         </div>
   </body>
