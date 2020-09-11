@@ -11,7 +11,7 @@
     </head>
     <body>
     <div class="jumbotron text-center">
-    <h1 onclick="redirectIndex()">Urban Explorer</h1>
+    <h1 onclick="redirectIndex()">Alerta de Ações</h1>
        <p>Lista de Ações da B3</p>
      </div>
         <div class="container">
@@ -43,7 +43,8 @@ function CallAPI($method, $url, $data){
 
  return $result;
 }
-$respota = CallAPI("GET", "https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3", false)
+$respota = CallAPI("GET", "https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3", false);
+echo($respota);
 ?>
 </div>
   </body>
