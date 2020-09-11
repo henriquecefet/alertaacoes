@@ -72,11 +72,11 @@ EOF;
         <h2>Comprar:</h2>
         <?php
         for($i = 0; $i < sizeof($comprar); $i = $i + 1){
-          echo "Ação: ".$comprar["dados"][$i]["dados"][$i]["acao"][0];
+          echo "Ação: ".$comprar["dados"][$i]["acao"][0];
           echo("<br>");
-          echo "Preço: ".$comprar["dados"][$i]["dados"][$i]["acao"][1];
+          echo "Preço: ".$comprar["dados"][$i]["acao"][1];
           echo("<br>");
-          echo "Variação: ".$comprar["dados"][$i]["dados"][$i]["acao"][2];
+          echo "Variação: ".$comprar["dados"][$i]["acao"][2];
           echo("<br>");
         }
 
@@ -86,11 +86,11 @@ EOF;
         <h2>Estavél</h2>
         <?php
         for($i = 0; $i < sizeof($estavel); $i = $i + 1){
-          echo "Ação: ".$estavel["dados"][$i]["dados"][$i]["acao"][0];
+          echo "Ação: ".$estavel["dados"][$i]["acao"][0];
           echo("<br>");
-          echo "Preço: ".$estavel["dados"][$i]["dados"][$i]["acao"][1];
+          echo "Preço: ".$estavel["dados"][$i]["acao"][1];
           echo("<br>");
-          echo "Variação: ".$estavel["dados"][$i]["dados"][$i]["acao"][2];
+          echo "Variação: ".$estavel["dados"][$i]["acao"][2];
           echo("<br>");
         }
 
