@@ -18,7 +18,7 @@
         <?php
         echo("olá");
         echo("<br>");
-        $url  = "'https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3'";
+        $url  = "http://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3";
 
 
         $ch = curl_init();
