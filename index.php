@@ -18,13 +18,17 @@
 
 <?php
 echo("olá");
-function CallAPI($url){
-  ini_set("allow_url_fopen", 1);
-  $json = file_get_contents($url);
-  return json_decode($json);
-}
-$respota = CallAPI("https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3");
-echo($respota);
+$ch = curl_init();
+// IMPORTANT: the below line is a security risk, read https://paragonie.com/blog/2017/10/certainty-automated-cacert-pem-management-for-php-software
+// in most cases, you should set it to true
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_URL, 'https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3');
+$result = curl_exec($ch);
+curl_close($ch);
+
+$obj = json_decode($result);
+echo $obj->valid_key;
 ?>
 </div>
   </body>
