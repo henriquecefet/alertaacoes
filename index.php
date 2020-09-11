@@ -50,6 +50,7 @@ EOF;
           }
 
         }
+        print_r($comprar);
         pg_close($db);
         ?>
         </div>
