@@ -15,31 +15,22 @@
        <p>Lista de Ações da B3</p>
      </div>
         <div class="container">
-
-<?php
-echo("olá");
-$ch = curl_init();
-// IMPORTANT: the below line is a security risk, read https://paragonie.com/blog/2017/10/certainty-automated-cacert-pem-management-for-php-software
-// in most cases, you should set it to true
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:7.0.1) Gecko/20100101 Firefox/7.0.1');
-curl_setopt($ch, CURLOPT_URL, 'https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3');
-$result = curl_exec($ch);
-if($result){
-  curl_close($ch);
-
-  $obj = json_decode($result);
-  echo "<br>";
-  echo $obj["valid_key"];
-  echo "<br>";
-  echo $obj->valid_key;
-}
-else{
-  echo "não foi";
-}
-
-?>
-</div>
+          <script type="text/javascript">
+            function pegarAcoes(){
+              var settings = {
+                "url": "https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=bidi4",
+                "method": "GET",
+                "timeout": 0,
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false
+              };
+              $.ajax(settings).done(function (response) {
+                console.log(response);
+                document.write(response);
+              });
+            }
+          </script>
+        </div>
   </body>
 </html>
