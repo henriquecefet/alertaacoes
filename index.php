@@ -53,6 +53,7 @@ EOF;
         echo "Operation done successfully\n". "<br>";
         pg_close($db);
         ?>
+        </div>
     <div class="row">
       <div class="col-md-4">
         <h2>Vender:</h2>
@@ -88,6 +89,5 @@ EOF;
          ?>
       </div>
     </div>
-</div>
   </body>
 </html>
