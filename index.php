@@ -25,13 +25,19 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_URL, 'https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3');
 $result = curl_exec($ch);
-curl_close($ch);
+if($result){
+  curl_close($ch);
 
-$obj = json_decode($result);
-echo "<br>";
-echo $obj["valid_key"];
-echo "<br>";
-echo $obj->valid_key;
+  $obj = json_decode($result);
+  echo "<br>";
+  echo $obj["valid_key"];
+  echo "<br>";
+  echo $obj->valid_key;
+}
+else{
+  echo "não foi";
+}
+
 ?>
 </div>
   </body>
