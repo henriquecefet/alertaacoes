@@ -38,11 +38,11 @@ EOF;
           curl_close($ch);
           //var_dump(json_decode($result, true));
           $dados = json_decode($result, true);
-          echo "Ação: "$dados['results']['name'];
+          echo "Ação: ".$dados['results']['name'];
           echo("<br>");
-          echo "Preço: R$"$dados['results']['price'];
+          echo "Preço: R$".$dados['results']['price'];
           echo("<br>");
-          echo "Variação: R$"$dados['results']['change_percent'];
+          echo "Variação: R$".$dados['results']['change_percent'];
           echo("<br>");
         }
         echo "Operation done successfully\n". "<br>";
