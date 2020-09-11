@@ -28,7 +28,7 @@ EOF;
          exit;
         }
         while($row = pg_fetch_row($ret)) {
-          $url  = "http://api.hgbrasil.com/finance/stock_price?key=e9979170&symbol=".$row[0];
+          $url  = "http://api.hgbrasil.com/finance/stock_price?key=8a9cc248&symbol=".$row[0];
           $ch = curl_init();
           curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
           curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -50,7 +50,7 @@ EOF;
           }
 
         }
-        //print_r($comprar);
+        //var_dump($comprar);
         pg_close($db);
         ?>
         </div>
