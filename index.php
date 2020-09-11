@@ -29,7 +29,7 @@ curl_close($ch);
 
 $obj = json_decode($result);
 echo "<br>";
-echo $obj->results;
+echo $obj["results"]["B3SA3"]["price"];
 ?>
 </div>
   </body>
