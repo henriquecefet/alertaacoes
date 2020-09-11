@@ -23,6 +23,7 @@ $ch = curl_init();
 // in most cases, you should set it to true
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:7.0.1) Gecko/20100101 Firefox/7.0.1');
 curl_setopt($ch, CURLOPT_URL, 'https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3');
 $result = curl_exec($ch);
 if($result){
