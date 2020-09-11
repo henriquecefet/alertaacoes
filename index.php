@@ -1,4 +1,12 @@
 <?php
+$to = "henrique.rodrigues@uniriotec.br";
+$subject = "Testando";
+$txt = "Hello world!";
+$headers = "From: rodriguesoareshenrique@gmail.com" . "\r\n" .
+"CC: henrique.rodrigues@uniriotec.br";
+mail($to,$subject,$txt,$headers);
+
+/*
 $curl = curl_init();
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3",
@@ -14,4 +22,5 @@ $response = curl_exec($curl);
 $err = curl_error($curl);
 $response = json_decode($response);
 echo($response);
+*/
 ?>
