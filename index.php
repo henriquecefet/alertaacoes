@@ -39,11 +39,11 @@ EOF;
           //var_dump(json_decode($result, true));
           //echo("<br>");
           $dados = json_decode($result, true);
-          echo "Ação: ".$dados['results'][$row[0]]->symbol;
+          echo "Ação: ".$dados['results'][''.$row[0]]['symbol'];
           echo("<br>");
-          echo "Ação: ".$dados['results'][$row[0]]->price;
+          echo "Preço: ".$dados['results'][''.$row[0]]['price]';
           echo("<br>");
-          echo "Ação: ".$dados['results'][$row[0]]->change_percent;
+          echo "Variação: ".$dados['results'][''.$row[0]]['change_percent'];
           echo("<br>");
         }
         echo "Operation done successfully\n". "<br>";
