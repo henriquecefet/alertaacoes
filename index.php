@@ -31,7 +31,7 @@ EOF;
           echo("<br>");
           echo($row[0]);
           echo("<br>");
-          $url  = "http://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol="+row[0];
+          $url  = "http://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol="+$row[0];
           $ch = curl_init();
           curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
           curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
