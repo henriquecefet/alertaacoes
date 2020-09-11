@@ -25,7 +25,6 @@ EOF;
          exit;
         }
         while($row = pg_fetch_row($ret)) {
-          echo("<br>");
           $url  = "http://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=".$row[0];
           $ch = curl_init();
           curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -50,7 +49,6 @@ EOF;
           }
 
         }
-        echo "Operation done successfully\n". "<br>";
         pg_close($db);
         ?>
         </div>
@@ -69,22 +67,22 @@ EOF;
       <div class="col-md-4">
         <h2>Comprar:</h2>
         <?php
-        echo "Ação: ".$comprar->$dados['results'][$row[0]]['symbol'];
+        echo "Ação: ".$comprar->dados['results'][$row[0]]['symbol'];
         echo("<br>");
-        echo "Preço: ".$comprar->$dados['results'][$row[0]]['price'];
+        echo "Preço: ".$comprar->dados['results'][$row[0]]['price'];
         echo("<br>");
-        echo "Variação: ".$comprar->$dados['results'][$row[0]]['change_percent'];
+        echo "Variação: ".$comprar->dados['results'][$row[0]]['change_percent'];
         echo("<br>");
          ?>
       </div>
       <div class="col-md-4">
         <h2>Estavél</h2>
         <?php
-        echo "Ação: ".$comprar->$dados['results'][$row[0]]['symbol'];
+        echo "Ação: ".$comprar->dados['results'][$row[0]]['symbol'];
         echo("<br>");
-        echo "Preço: ".$comprar->$dados['results'][$row[0]]['price'];
+        echo "Preço: ".$comprar->dados['results'][$row[0]]['price'];
         echo("<br>");
-        echo "Variação: ".$comprar->$dados['results'][$row[0]]['change_percent'];
+        echo "Variação: ".$comprar->dados['results'][$row[0]]['change_percent'];
         echo("<br>");
          ?>
       </div>
