@@ -32,14 +32,14 @@ EOF;
           curl_setopt($ch, CURLOPT_URL,$url);
           $result=curl_exec($ch);
           curl_close($ch);
-          //var_dump(json_decode($result, true));
-          //echo("<br>");
+          var_dump(json_decode($result, true));
+          echo("<br>");
           $dados = json_decode($result, true);
           $vender = array();
           $comprar = array();
           $estavel = array();
           $acao =  array($dados['results'][$row[0]]['symbol'], $dados['results'][$row[0]]['price'], $dados['results'][$row[0]]['change_percent']);
-          echo "Ação: ".$dados['results'][$row[0]]['symbol'];
+          //echo "Ação: ".$dados['results'][$row[0]]['symbol'];
           if($dados['results'][$row[0]]['price']>1){
             array_push($vender, $acao);
           }
