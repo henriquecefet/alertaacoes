@@ -39,7 +39,7 @@ EOF;
           //var_dump(json_decode($result, true));
           //echo("<br>");
           $dados = json_decode($result, true);
-          echo "Ação: ".$dados['results'][0]['name'];
+          echo "Ação: ".$dados['results'];
           echo("<br>");
           echo "Preço: R$".$dados['results'][0]['price'];
           echo("<br>");
