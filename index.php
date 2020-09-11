@@ -38,14 +38,15 @@ EOF;
           $vender = array();
           $comprar = array();
           $estavel = array();
+          $acao =  array($dados['results'][$row[0]]['symbol'], $dados['results'][$row[0]]['price'], $dados['results'][$row[0]]['change_percent'])
           if($dados['results'][$row[0]]['price']>1){
-            array_push($vender, $dados);
+            array_push($vender, $acao);
           }
           elseif($dados['results'][$row[0]]['price']<-1){
-            array_push($comprar, $dados);
+            array_push($comprar, $acao);
           }
           else{
-              array_push($estavel, $dados);
+              array_push($estavel, $acao);
           }
 
         }
@@ -56,12 +57,12 @@ EOF;
       <div class="col-md-4">
         <h2>Vender:</h2>
           <?php
-          for($i = 0; $i = sizeof($vender); $i = $i + 1){
-            echo "Ação: ".$vender["dados"][$i]['results'][$row[0]]['symbol'];
+          for($i = 0; $i < sizeof($vender); $i = $i + 1){
+            echo "Ação: ".$vender["dados"][$i]["acao"][0];
             echo("<br>");
-            echo "Preço: ".$vender["dados"][$i]['results'][$row[0]]['price'];
+            echo "Preço: ".$vender["dados"][$i]["acao"][1];
             echo("<br>");
-            echo "Variação: ".$vender-["dados"][$i]['results'][$row[0]]['change_percent'];
+            echo "Variação: ".$vender["dados"][$i]["acao"][2];
             echo("<br>");
           }
 
@@ -70,12 +71,12 @@ EOF;
       <div class="col-md-4">
         <h2>Comprar:</h2>
         <?php
-        for($i = 0; $i = sizeof($comprar); $i = $i + 1){
-          echo "Ação: ".$comprar["dados"][$i]['results'][$row[0]]['symbol'];
+        for($i = 0; $i < sizeof($comprar); $i = $i + 1){
+          echo "Ação: ".$comprar["dados"][$i]["dados"][$i]["acao"][0];
           echo("<br>");
-          echo "Preço: ".$comprar["dados"][$i]['results'][$row[0]]['price'];
+          echo "Preço: ".$comprar["dados"][$i]["dados"][$i]["acao"][1];
           echo("<br>");
-          echo "Variação: ".$comprar["dados"][$i]['results'][$row[0]]['change_percent'];
+          echo "Variação: ".$comprar["dados"][$i]["dados"][$i]["acao"][2];
           echo("<br>");
         }
 
@@ -84,12 +85,12 @@ EOF;
       <div class="col-md-4">
         <h2>Estavél</h2>
         <?php
-        for($i = 0; $i = sizeof($estavel); $i = $i + 1){
-          echo "Ação: ".$comprar["dados"][$i]['results'][$row[0]]['symbol'];
+        for($i = 0; $i < sizeof($estavel); $i = $i + 1){
+          echo "Ação: ".$estavel["dados"][$i]["dados"][$i]["acao"][0];
           echo("<br>");
-          echo "Preço: ".$comprar["dados"][$i]['results'][$row[0]]['price'];
+          echo "Preço: ".$estavel["dados"][$i]["dados"][$i]["acao"][1];
           echo("<br>");
-          echo "Variação: ".$comprar["dados"][$i]['results'][$row[0]]['change_percent'];
+          echo "Variação: ".$estavel["dados"][$i]["dados"][$i]["acao"][2];
           echo("<br>");
         }
 
