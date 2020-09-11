@@ -15,9 +15,6 @@ include("conexao.php");
     <div class="jumbotron text-center">
     <h1>Alerta de Ações</h1>
        <p>Lista de Ações da B3</p>
-     </div>
-        <div class="container">
-          <h2>Vender:</h2>
         <?php
         $sql =<<<EOF
            SELECT * from acoes.acoes;
@@ -39,20 +36,58 @@ EOF;
           //var_dump(json_decode($result, true));
           //echo("<br>");
           $dados = json_decode($result, true);
-          echo "Ação: ".$dados['results'][$row[0]]['symbol'];
-          echo("<br>");
-          echo "Preço: ".$dados['results'][$row[0]]['price'];
-          echo("<br>");
-          echo "Variação: ".$dados['results'][$row[0]]['change_percent'];
-          echo("<br>");
+          $vender = array();
+          $comprar = array();
+          $estavel = array();
+          if($dados['results'][$row[0]]['price']>1){
+            array_push($vender, $dados);
+          }
+          elseif($dados['results'][$row[0]]['price']<-1){
+            array_push($comprar, $dados);
+          }
+          else{
+              array_push($estavel, $dados);
+          }
+
         }
         echo "Operation done successfully\n". "<br>";
         pg_close($db);
         ?>
-        </div>
-            <div class="container">
-                  <h2>Comprar:</h2>
-            </div>
-
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Vender:</h2>
+          <?php
+          echo "Ação: ".$vender->$dados['results'][$row[0]]['symbol'];
+          echo("<br>");
+          echo "Preço: ".$vender->$dados['results'][$row[0]]['price'];
+          echo("<br>");
+          echo "Variação: ".$vender->$dados['results'][$row[0]]['change_percent'];
+          echo("<br>");
+           ?>
+      </div>
+      <div class="col-md-4">
+        <h2>Comprar:</h2>
+        <?php
+        echo "Ação: ".$comprar->$dados['results'][$row[0]]['symbol'];
+        echo("<br>");
+        echo "Preço: ".$comprar->$dados['results'][$row[0]]['price'];
+        echo("<br>");
+        echo "Variação: ".$comprar->$dados['results'][$row[0]]['change_percent'];
+        echo("<br>");
+         ?>
+      </div>
+      <div class="col-md-4">
+        <h2>Estavél</h2>
+        <?php
+        echo "Ação: ".$comprar->$dados['results'][$row[0]]['symbol'];
+        echo("<br>");
+        echo "Preço: ".$comprar->$dados['results'][$row[0]]['price'];
+        echo("<br>");
+        echo "Variação: ".$comprar->$dados['results'][$row[0]]['change_percent'];
+        echo("<br>");
+         ?>
+      </div>
+    </div>
+</div>
   </body>
 </html>
