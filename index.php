@@ -39,9 +39,9 @@ EOF;
           //var_dump(json_decode($result, true));
           //echo("<br>");
           $dados = json_decode($result, true);
-          echo "Ação: ".$dados->results->"".strval($row[0]).""->name
+          echo "Ação: ".$dados->results->"".strval($row[0]).""->name;
           echo("<br>");
-          echo "Preço: R$".$dados->results->"".strval($row[0]).""->price
+          echo "Preço: R$".$dados->results->"".strval($row[0]).""->price;
           echo("<br>");
           echo "Variação: R$".$dados->results->"".strval($row[0]).""->change_percent;
           echo("<br>");
