@@ -28,7 +28,8 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 $obj = json_decode($result);
-echo $obj->valid_key;
+echo "<br>";
+echo $obj->results;
 ?>
 </div>
   </body>
