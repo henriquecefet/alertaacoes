@@ -42,16 +42,6 @@ EOF;
         }
         echo "Operation done successfully\n". "<br>";
         pg_close($db);
-
-
-
-
-
-
-
-
-
-
         ?>
         </div>
   </body>
