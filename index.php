@@ -56,33 +56,33 @@ EOF;
       <div class="col-md-4">
         <h2>Vender:</h2>
           <?php
-          echo "Ação: ".$vender->$dados['results'][$row[0]]['symbol'];
+          echo "Ação: ".$vender["dados"]['results'][$row[0]]['symbol'];
           echo("<br>");
-          echo "Preço: ".$vender->$dados['results'][$row[0]]['price'];
+          echo "Preço: ".$vender["dados"]['results'][$row[0]]['price'];
           echo("<br>");
-          echo "Variação: ".$vender->$dados['results'][$row[0]]['change_percent'];
+          echo "Variação: ".$vender-["dados"]['results'][$row[0]]['change_percent'];
           echo("<br>");
            ?>
       </div>
       <div class="col-md-4">
         <h2>Comprar:</h2>
         <?php
-        echo "Ação: ".$comprar->dados['results'][$row[0]]['symbol'];
+        echo "Ação: ".$comprar["dados"]['results'][$row[0]]['symbol'];
         echo("<br>");
-        echo "Preço: ".$comprar->dados['results'][$row[0]]['price'];
+        echo "Preço: ".$comprar["dados"]['results'][$row[0]]['price'];
         echo("<br>");
-        echo "Variação: ".$comprar->dados['results'][$row[0]]['change_percent'];
+        echo "Variação: ".$comprar["dados"]['results'][$row[0]]['change_percent'];
         echo("<br>");
          ?>
       </div>
       <div class="col-md-4">
         <h2>Estavél</h2>
         <?php
-        echo "Ação: ".$comprar->dados['results'][$row[0]]['symbol'];
+        echo "Ação: ".$comprar["dados"]['results'][$row[0]]['symbol'];
         echo("<br>");
-        echo "Preço: ".$comprar->dados['results'][$row[0]]['price'];
+        echo "Preço: ".$comprar["dados"]['results'][$row[0]]['price'];
         echo("<br>");
-        echo "Variação: ".$comprar->dados['results'][$row[0]]['change_percent'];
+        echo "Variação: ".$comprar["dados"]['results'][$row[0]]['change_percent'];
         echo("<br>");
          ?>
       </div>
