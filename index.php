@@ -56,34 +56,43 @@ EOF;
       <div class="col-md-4">
         <h2>Vender:</h2>
           <?php
-          echo "Ação: ".$vender["dados"]['results'][$row[0]]['symbol'];
-          echo("<br>");
-          echo "Preço: ".$vender["dados"]['results'][$row[0]]['price'];
-          echo("<br>");
-          echo "Variação: ".$vender-["dados"]['results'][$row[0]]['change_percent'];
-          echo("<br>");
+          for($i = 0; $i = sizeof($vender), $i = $i + 1){
+            echo "Ação: ".$vender["dados"][$i]['results'][$row[0]]['symbol'];
+            echo("<br>");
+            echo "Preço: ".$vender["dados"][$i]['results'][$row[0]]['price'];
+            echo("<br>");
+            echo "Variação: ".$vender-["dados"][$i]['results'][$row[0]]['change_percent'];
+            echo("<br>");
+          }
+
            ?>
       </div>
       <div class="col-md-4">
         <h2>Comprar:</h2>
         <?php
-        echo "Ação: ".$comprar["dados"]['results'][$row[0]]['symbol'];
-        echo("<br>");
-        echo "Preço: ".$comprar["dados"]['results'][$row[0]]['price'];
-        echo("<br>");
-        echo "Variação: ".$comprar["dados"]['results'][$row[0]]['change_percent'];
-        echo("<br>");
+        for($i = 0; $i = sizeof($comprar), $i = $i + 1){
+          echo "Ação: ".$comprar["dados"][$i]['results'][$row[0]]['symbol'];
+          echo("<br>");
+          echo "Preço: ".$comprar["dados"][$i]['results'][$row[0]]['price'];
+          echo("<br>");
+          echo "Variação: ".$comprar["dados"][$i]['results'][$row[0]]['change_percent'];
+          echo("<br>");
+        }
+
          ?>
       </div>
       <div class="col-md-4">
         <h2>Estavél</h2>
         <?php
-        echo "Ação: ".$comprar["dados"]['results'][$row[0]]['symbol'];
-        echo("<br>");
-        echo "Preço: ".$comprar["dados"]['results'][$row[0]]['price'];
-        echo("<br>");
-        echo "Variação: ".$comprar["dados"]['results'][$row[0]]['change_percent'];
-        echo("<br>");
+        for($i = 0; $i = sizeof($estavel), $i = $i + 1){
+          echo "Ação: ".$comprar["dados"][$i]['results'][$row[0]]['symbol'];
+          echo("<br>");
+          echo "Preço: ".$comprar["dados"][$i]['results'][$row[0]]['price'];
+          echo("<br>");
+          echo "Variação: ".$comprar["dados"][$i]['results'][$row[0]]['change_percent'];
+          echo("<br>");
+        }
+
          ?>
       </div>
     </div>
