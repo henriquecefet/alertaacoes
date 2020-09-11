@@ -41,7 +41,7 @@ EOF;
           $dados = json_decode($result, true);
           echo "Ação: ".$dados['results'][$row[0]]['symbol'];
           echo("<br>");
-          echo "Preço: ".$dados['results'][$row[0]]['price]';
+          echo "Preço: ".$dados['results'][$row[0]]['price'];
           echo("<br>");
           echo "Variação: ".$dados['results'][$row[0]]['change_percent'];
           echo("<br>");
