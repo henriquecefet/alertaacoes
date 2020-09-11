@@ -39,10 +39,10 @@ EOF;
           $comprar = array();
           $estavel = array();
           $acao =  array($dados['results'][$row[0]]['symbol'], $dados['results'][$row[0]]['price'], $dados['results'][$row[0]]['change_percent']);
-          if($dados['results'][$row[0]]['price']>1){
+          if($dados['results'][$row[0]]['change_percent']>1){
             array_push($vender, $acao);
           }
-          elseif($dados['results'][$row[0]]['price']<-1){
+          elseif($dados['results'][$row[0]]['change_percent']<-1){
             array_push($comprar, $acao);
           }
           else{
