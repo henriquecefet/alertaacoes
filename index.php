@@ -48,7 +48,7 @@ EOF;
           else{
               array_push($estavel, $acao);
           }
-
+          var_dump(json_decode($comprar, true));
         }
         pg_close($db);
         ?>
