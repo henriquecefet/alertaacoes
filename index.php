@@ -17,33 +17,12 @@
         <div class="container">
 
 <?php
-function CallAPI($method, $url, $data){
- $curl = curl_init();
-
- switch ($method) {
-     case "POST":
-         curl_setopt($curl, CURLOPT_POST, 1);
-
-         if ($data)
-             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-         break;
-     case "PUT":
-         curl_setopt($curl, CURLOPT_PUT, 1);
-         break;
-     default:
-         if ($data)
-             $url = sprintf("%s?%s", $url, http_build_query($data));
- }
-
- // Optional Authentication:
-
- $result = curl_exec($curl);
-
- curl_close($curl);
-
- return $result;
+function CallAPI($url){
+  ini_set("allow_url_fopen", 1);
+  $json = file_get_contents($url);
+  return json_decode($json);
 }
-$respota = CallAPI("GET", "https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3", false);
+$respota = CallAPI("https://api.hgbrasil.com/finance/stock_price?key=4750432b&symbol=b3sa3");
 echo($respota);
 ?>
 </div>
