@@ -39,6 +39,7 @@ EOF;
           $comprar = array();
           $estavel = array();
           $acao =  array($dados['results'][$row[0]]['symbol'], $dados['results'][$row[0]]['price'], $dados['results'][$row[0]]['change_percent']);
+          print_r($acao);
           if($dados['results'][$row[0]]['price']>1){
             array_push($vender, $acao);
           }
@@ -48,7 +49,7 @@ EOF;
           else{
               array_push($estavel, $acao);
           }
-          var_dump(json_decode($comprar, true));
+
         }
         pg_close($db);
         ?>
