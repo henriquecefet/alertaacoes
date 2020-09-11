@@ -56,7 +56,7 @@ EOF;
       <div class="col-md-4">
         <h2>Vender:</h2>
           <?php
-          for($i = 0; $i = sizeof($vender), $i = $i + 1){
+          for($i = 0; $i = sizeof($vender); $i = $i + 1){
             echo "Ação: ".$vender["dados"][$i]['results'][$row[0]]['symbol'];
             echo("<br>");
             echo "Preço: ".$vender["dados"][$i]['results'][$row[0]]['price'];
@@ -70,7 +70,7 @@ EOF;
       <div class="col-md-4">
         <h2>Comprar:</h2>
         <?php
-        for($i = 0; $i = sizeof($comprar), $i = $i + 1){
+        for($i = 0; $i = sizeof($comprar); $i = $i + 1){
           echo "Ação: ".$comprar["dados"][$i]['results'][$row[0]]['symbol'];
           echo("<br>");
           echo "Preço: ".$comprar["dados"][$i]['results'][$row[0]]['price'];
@@ -84,7 +84,7 @@ EOF;
       <div class="col-md-4">
         <h2>Estavél</h2>
         <?php
-        for($i = 0; $i = sizeof($estavel), $i = $i + 1){
+        for($i = 0; $i = sizeof($estavel); $i = $i + 1){
           echo "Ação: ".$comprar["dados"][$i]['results'][$row[0]]['symbol'];
           echo("<br>");
           echo "Preço: ".$comprar["dados"][$i]['results'][$row[0]]['price'];
