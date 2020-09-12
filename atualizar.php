@@ -1,4 +1,5 @@
 <?php
+include("conexao.php");
 $sql =<<<EOF
    SELECT * from acoes.acoes;
 EOF;
