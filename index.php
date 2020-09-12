@@ -68,11 +68,8 @@ EOF;
         for($i = 0; $i < sizeof($comprar); $i = $i + 1){
           echo "<div class='card-body'>";
           echo "<p class='card-text'>Ação: ".$comprar[$i][0]."<p class='card-text'>";
-          echo("<br>");
           echo "<p class='card-text'>Preço: ".$comprar[$i][1]."<p class='card-text'>";
-          echo("<br>");
           echo "<p class='card-text'>Variação: ".$comprar[$i][2]."<p class='card-text'>";
-          echo("<br>");
           echo "</div>";
           echo("<br>");
         }
@@ -80,16 +77,13 @@ EOF;
          ?>
       </div>
       <div class="col-md-4">
-        <h2>Estavél</h2>
+        <h2>Estavél:</h2>
         <?php
         for($i = 0; $i < sizeof($estavel); $i = $i + 1){
           echo "<div class='card-body'>";
           echo "<p class='card-text'>Ação: ".$estavel[$i][0]."<p class='card-text'>";
-          echo("<br>");
           echo "<p class='card-text'>Preço: ".$estavel[$i][1]."<p class='card-text'>";
-          echo("<br>");
           echo "<p class='card-text'>Variação: ".$estavel[$i][2]."<p class='card-text'>";
-          echo("<br>");
           echo "</div>";
           echo("<br>");
         }
