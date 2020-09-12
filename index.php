@@ -28,21 +28,11 @@ EOF;
          exit;
         }
         while($row = pg_fetch_row($ret)) {
-          $url  = "http://api.hgbrasil.com/finance/stock_price?key=8a9cc248&symbol=".$row[0];
-          $ch = curl_init();
-          curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-          curl_setopt($ch, CURLOPT_URL,$url);
-          $result=curl_exec($ch);
-          curl_close($ch);
-          //var_dump(json_decode($result, true));
-          //echo("<br>");
-          $dados = json_decode($result, true);
-          $acao =  array($dados['results'][$row[0]]['symbol'], $dados['results'][$row[0]]['price'], $dados['results'][$row[0]]['change_percent']);
-          if($dados['results'][$row[0]]['change_percent']>1){
+          $acao =  array([$row[0],$row[1] ,$row[2] );
+          if($row[1]>1){
             array_push($vender, $acao);
           }
-          elseif($dados['results'][$row[0]]['change_percent']<-1){
+          elseif($row[1]<-1){
             array_push($comprar, $acao);
           }
           else{
