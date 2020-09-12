@@ -35,7 +35,6 @@ EOF;
   $ret = pg_query($db, $sql);
   if(!$ret) {
        echo pg_last_error($db);
-       exit;
   }
   else{
     echo "Banco atualizado";
