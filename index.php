@@ -49,7 +49,7 @@ EOF;
         <h2>Vender:</h2>
           <?php
           for($i = 0; $i < sizeof($vender); $i = $i + 1){
-            echo "<div class='card mb-4 shadow-sm'>"
+            echo "<div class='card mb-4 shadow-sm'>";
             echo "<div class='card-body'>";
             echo "<p class='card-text'>Ação: ".$vender[$i][0]."<p class='card-text'>";
             echo "<p class='card-text'>Preço: ".$vender[$i][1]."<p class='card-text'>";
@@ -65,7 +65,7 @@ EOF;
         <h2>Comprar:</h2>
         <?php
         for($i = 0; $i < sizeof($comprar); $i = $i + 1){
-          echo "<div class='card mb-4 shadow-sm'>"
+          echo "<div class='card mb-4 shadow-sm'>";
           echo "<div class='card-body'>";
           echo "<p class='card-text'>Ação: ".$comprar[$i][0]."<p class='card-text'>";
           echo "<p class='card-text'>Preço: ".$comprar[$i][1]."<p class='card-text'>";
@@ -81,7 +81,7 @@ EOF;
         <h2>Estavél:</h2>
         <?php
         for($i = 0; $i < sizeof($estavel); $i = $i + 1){
-          echo "<div class='card mb-4 shadow-sm'>"
+          echo "<div class='card mb-4 shadow-sm'>";
           echo "<div class='card-body'>";
           echo "<p class='card-text'>Ação: ".$estavel[$i][0]."<p class='card-text'>";
           echo "<p class='card-text'>Preço: ".$estavel[$i][1]."<p class='card-text'>";
