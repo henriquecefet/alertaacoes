@@ -29,10 +29,10 @@ EOF;
         }
         while($row = pg_fetch_row($ret)) {
           $acao =  array([$row[0],$row[1] ,$row[2] );
-          if($row[1]>1){
+          if($row[2]>1){
             array_push($vender, $acao);
           }
-          elseif($row[1]<-1){
+          elseif($row[2]<-1){
             array_push($comprar, $acao);
           }
           else{
