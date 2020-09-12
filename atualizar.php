@@ -29,10 +29,10 @@ while($row = pg_fetch_row($ret)) {
   else{
       $recomendacao = 3; // estável
   }
-  $sql =<<<EOF
+  $sql2 =<<<EOF
      UPDATE acoes.acoes SET valor = $preco, variacao = $variacao, recomendacao = $recomendacao where nome = '$nome';
 EOF;
-  $ret = pg_query($db, $sql);
+  $ret2 = pg_query($db, $sql2);
   if(!$ret) {
        echo pg_last_error($db);
   }
