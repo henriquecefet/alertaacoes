@@ -49,11 +49,14 @@ EOF;
         <h2>Vender:</h2>
           <?php
           for($i = 0; $i < sizeof($vender); $i = $i + 1){
-            echo "Ação: ".$vender[$i][0];
+            echo "<div class='card-body'>";
+            echo "<p class='card-text'>Ação: ".$vender[$i][0]."<p class='card-text'>";
             echo("<br>");
-            echo "Preço: ".$vender[$i][1];
+            echo "<p class='card-text'>Preço: ".$vender[$i][1]."<p class='card-text'>";
             echo("<br>");
-            echo "Variação: ".$vender[$i][2];
+            echo "<p class='card-text'>Variação: ".$vender[$i][2]."<p class='card-text'>";
+            echo("<br>");
+            echo "</div>";
             echo("<br>");
           }
 
@@ -63,11 +66,14 @@ EOF;
         <h2>Comprar:</h2>
         <?php
         for($i = 0; $i < sizeof($comprar); $i = $i + 1){
-          echo "Ação: ".$comprar[$i][0];
+          echo "<div class='card-body'>";
+          echo "<p class='card-text'>Ação: ".$comprar[$i][0]."<p class='card-text'>";
           echo("<br>");
-          echo "Preço: ".$comprar[$i][1];
+          echo "<p class='card-text'>Preço: ".$comprar[$i][1]."<p class='card-text'>";
           echo("<br>");
-          echo "Variação: ".$comprar[$i][2];
+          echo "<p class='card-text'>Variação: ".$comprar[$i][2]."<p class='card-text'>";
+          echo("<br>");
+          echo "</div>";
           echo("<br>");
         }
 
@@ -77,11 +83,14 @@ EOF;
         <h2>Estavél</h2>
         <?php
         for($i = 0; $i < sizeof($estavel); $i = $i + 1){
-          echo "Ação: ".$estavel[$i][0];
+          echo "<div class='card-body'>";
+          echo "<p class='card-text'>Ação: ".$estavel[$i][0]."<p class='card-text'>";
           echo("<br>");
-          echo "Preço: ".$estavel[$i][1];
+          echo "<p class='card-text'>Preço: ".$estavel[$i][1]."<p class='card-text'>";
           echo("<br>");
-          echo "Variação: ".$estavel[$i][2];
+          echo "<p class='card-text'>Variação: ".$estavel[$i][2]."<p class='card-text'>";
+          echo("<br>");
+          echo "</div>";
           echo("<br>");
         }
 
