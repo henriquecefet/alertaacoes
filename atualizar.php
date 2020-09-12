@@ -30,7 +30,7 @@ while($row = pg_fetch_row($ret)) {
       $recomendacao = 3; // estável
   }
   $sql =<<<EOF
-     UPDATE acoes.acoes SET nome = $nome, preco = $preco, variacao = $variacao, recomendacao = $recomendacao;
+     UPDATE acoes.acoes SET preco = $preco, variacao = $variacao, recomendacao = $recomendacao where nome = $nome;
 EOF;
   $ret = pg_query($db, $sql);
   if(!$ret) {
