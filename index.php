@@ -28,7 +28,7 @@ EOF;
          exit;
         }
         while($row = pg_fetch_row($ret)) {
-          $acao =  array([$row[0],$row[1] ,$row[2] );
+          $acao =  array($row[0],$row[1] ,$row[2] );
           if($row[2]>1){
             array_push($vender, $acao);
           }
