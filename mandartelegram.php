@@ -20,7 +20,6 @@ EOF;
    exit;
   }
   while($row = pg_fetch_row($ret)) {
-    $acao =  array(, , );
     if($row[2]>1){
       telegram("Recomendação de venda: \n
       Ação: ".$row[0]."\n
@@ -35,5 +34,6 @@ EOF;
       }
     }
   }
-  pegarDadosBolsa()
+  //pegarDadosBolsa()
+  telegram("Sou um robô");
  ?>
