@@ -10,30 +10,5 @@ function telegram($msg) {
         $result=file_get_contents($url,false,$context);
         return $result;
 }
-function pegarDadosBolsa(){
-  $sql =<<<EOF
-     SELECT * from acoes.acoes;
-EOF;
-  $ret = pg_query($db, $sql);
-  if(!$ret) {
-       echo pg_last_error($db);
-   exit;
-  }
-  while($row = pg_fetch_row($ret)) {
-    if($row[2]>1){
-      telegram("Recomendação de venda: \n
-      Ação: ".$row[0]."\n
-      Preço: ".$row[1]."\n
-      Variação "$row[2]);
-    }
-    elseif($row[2]<-1){
-      telegram("Recomendação de Compra: \n
-      Ação: ".$row[0]."\n
-      Preço: ".$row[1]."\n
-      Variação "$row[2]);
-      }
-    }
-  }
-  //pegarDadosBolsa()
-  telegram("Sou um robô");
+telegram("Sou um robô");
  ?>
