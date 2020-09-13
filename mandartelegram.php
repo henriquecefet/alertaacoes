@@ -1,4 +1,5 @@
 <?php
+include("conexao.php");
 $telegrambot='1119671047:AAFTHvMowYex6dRol8_-d1eHy3kbe3Siv_o';
 $telegramchatid=1037497721;
 function telegram($msg) {
