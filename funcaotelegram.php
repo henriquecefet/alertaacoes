@@ -9,6 +9,7 @@ function telegram($msg, $telegramchatid) {
         return $result;
 }
 function mandarAcoesParaUmaPessoa($chatid){
+  global $db;
   $sql1 =<<<EOF
      SELECT * from acoes.acoes;
 EOF;
@@ -30,6 +31,7 @@ EOF;
   }
 }
 function adicionarChat($chatid){
+  global $db;
   $sql =<<<EOF
      INSERT INTO acoes.usuarios (chatid) VALUES ('$chatid');
 EOF;
