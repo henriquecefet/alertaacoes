@@ -15,6 +15,8 @@ EOF;
   $ret1 = pg_query($db, $sql1);
   if(!$ret1) {
        echo pg_last_error($db);
+       telegram("erro",$chatid)
+       telegram(pg_last_error($db),$chatid);
    exit;
   }
   while($row = pg_fetch_row($ret1)) {
