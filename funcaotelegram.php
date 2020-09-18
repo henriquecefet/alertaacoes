@@ -16,7 +16,6 @@ EOF;
   if(!$ret1) {
        echo pg_last_error($db);
        telegram("erro",$chatid);
-       telegram(pg_last_error($db),$chatid);
    exit;
   }
   while($row = pg_fetch_row($ret1)) {
@@ -36,6 +35,7 @@ function adicionarChat($chatid){
 EOF;
   $ret = pg_query($db, $sql);
   if(!$ret) {
+       telegram("erro",$chatid);
        echo pg_last_error($db);
   }
   else{
