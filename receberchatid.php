@@ -1,5 +1,6 @@
 <?php
 include("conexao.php");
+include("funcaotelegram.php");
 $url  = "https://api.telegram.org/bot1119671047:AAFTHvMowYex6dRol8_-d1eHy3kbe3Siv_o/getUpdates";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -18,5 +19,6 @@ if(!$ret) {
 }
 else{
   echo "Banco atualizado";
+  telegram("Seu numero foi registrado. Você receberá recomendações de ações.");
 }
  ?>
