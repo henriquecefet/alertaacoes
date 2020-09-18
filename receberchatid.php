@@ -9,6 +9,14 @@ $result=curl_exec($ch);
 curl_close($ch);
 $dados = json_decode($result, true);
 $chatid = $dados['result'][0]['message']['chat']['id'];
-echo $chatid;
-
+$sql =<<<EOF
+   INSERT INTO acoes.usuario (chatid) VALUES ('$chatid');
+EOF;
+$ret = pg_query($db, $sql);
+if(!$ret) {
+     echo pg_last_error($db);
+}
+else{
+  echo "Banco atualizado";
+}
  ?>
