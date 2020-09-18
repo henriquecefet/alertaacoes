@@ -11,7 +11,7 @@ function telegram($msg, $telegramchatid) {
 function mandarAcoesParaUmaPessoa($chatid){
   $sql1 =<<<EOF
      SELECT * from acoes.acoes;
-  EOF;
+EOF;
   $ret1 = pg_query($db, $sql1);
   if(!$ret1) {
        echo pg_last_error($db);
@@ -31,7 +31,7 @@ function mandarAcoesParaUmaPessoa($chatid){
 function adicionarChat($chatid){
   $sql =<<<EOF
      INSERT INTO acoes.usuarios (chatid) VALUES ('$chatid');
-  EOF;
+EOF;
   $ret = pg_query($db, $sql);
   if(!$ret) {
        echo pg_last_error($db);
