@@ -1,4 +1,5 @@
 <?php
+include("conexao.php");
 include("funcaotelegram.php");
 $path = "https://api.telegram.org/bot1119671047:AAFTHvMowYex6dRol8_-d1eHy3kbe3Siv_o";
 
