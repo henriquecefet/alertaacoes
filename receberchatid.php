@@ -7,7 +7,7 @@ $update = json_decode(file_get_contents("php://input"), TRUE);
 
 $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
-if(strcasecmp($message, "salvar") == 0){
+if(strcasecmp($message, "ações") == 0){
   mandarAcoesParaUmaPessoa($chatId);
 }
 
