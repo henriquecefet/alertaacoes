@@ -1,5 +1,4 @@
 <?php
-/*
 include("conexao.php");
 include("funcaotelegram.php");
 
@@ -9,16 +8,16 @@ $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
 
 if($message == "ações"){
-  //mandarAcoesParaUmaPessoa($chatId);
+  mandarAcoesParaUmaPessoa($chatId);
 }
 elseif($message == "salvar"){
-  //adicionarChat($chatId);
+  adicionarChat($chatId);
 }else{
   telegram("Olá, tudo bem?
   Digite 'ações' para receber recomendações de ações agora.
   Digite 'salvar' para reber recomendações de ações ao longo do dia",$chatId);
   }
-  */
-http_response_code(200);
+
+//http_response_code(200);
 
 ?>
