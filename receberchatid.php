@@ -7,10 +7,10 @@ $update = json_decode(file_get_contents("php://input"), TRUE);
 
 $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
-if($message == "ações" || $message == "Ações"  || $message == "acoes" || $message == "Acoes"){
+if($message == "ações"){
   mandarAcoesParaUmaPessoa($chatId);
 }
-elseif($message == "salvar" || $message == "Salvar"){
+elseif($message == "salvar"){
   adicionarChat($chatId);
 }else{
   telegram("Olá, tudo bem?
