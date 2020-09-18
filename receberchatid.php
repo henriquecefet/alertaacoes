@@ -10,7 +10,7 @@ curl_close($ch);
 $dados = json_decode($result, true);
 $chatid = $dados['result'][0]['message']['chat']['id'];
 $sql =<<<EOF
-   INSERT INTO acoes.usuario (chatid) VALUES ('$chatid');
+   INSERT INTO acoes.usuarios (chatid) VALUES ('$chatid');
 EOF;
 $ret = pg_query($db, $sql);
 if(!$ret) {
