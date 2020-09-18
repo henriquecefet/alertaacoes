@@ -7,7 +7,7 @@ $update = json_decode(file_get_contents("php://input"), TRUE);
 
 $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
-
+telegram("Olá",$chatId);
 if($message == "ações"){
   mandarAcoesParaUmaPessoa($chatId);
 }
