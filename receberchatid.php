@@ -1,6 +1,7 @@
 <?php
-//include("conexao.php");
-//include("funcaotelegram.php");
+/*
+include("conexao.php");
+include("funcaotelegram.php");
 
 $update = json_decode(file_get_contents("php://input"), TRUE);
 
@@ -17,6 +18,7 @@ elseif($message == "salvar"){
   Digite 'ações' para receber recomendações de ações agora.
   Digite 'salvar' para reber recomendações de ações ao longo do dia",$chatId);
   }
+  */
 http_response_code(200);
 
 ?>
